@@ -1,28 +1,24 @@
 package org.example;
 
-public class User {
-    private String FirstName;
-    private String LastName;
-    private String AmountOfMoney;
-    private String Id;
+import static org.example.Helper.generateID;
 
-    public User (String firstName, String lastName, String amountOfMoney) {
-        Id = String.valueOf(System.currentTimeMillis() / 1000L);
-        FirstName = firstName;
-        LastName = lastName;
-        AmountOfMoney = amountOfMoney;
+public class Product {
+    private final String Name;
+    private final String Price;
+    private final String Id;
+
+    public Product(String name, String price) {
+        Name = name;
+        Price = price;
+        Id = generateID();
     }
 
-    public String getFirstName() {
-        return FirstName;
+    public String getName() {
+        return Name;
     }
 
-    public String getLastName() {
-        return LastName;
-    }
-
-    public String getAmountOfMoney() {
-        return AmountOfMoney;
+    public String getPrice() {
+        return Price;
     }
 
     public String getId() {
